@@ -7,6 +7,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+/*
+    Injeções de dependências para funcionamento da WebAPI
+*/
+
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());    //AutoMapper - Conversão de Objeto para Objeto
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

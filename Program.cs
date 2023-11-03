@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SimpleTaskAPI.Data;
+using SimpleTaskAPI.Entities.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,10 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());    //Au
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("DbConnection")
 ));
+
+
+
+
 
 var app = builder.Build();
 

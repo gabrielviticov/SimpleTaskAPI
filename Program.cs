@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using SimpleTaskAPI.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -12,6 +15,11 @@ builder.Services.AddSwaggerGen();
 */
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());    //AutoMapper - Conversão de Objeto para Objeto
+
+
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
+    builder.Configuration.GetConnectionString("DbConnection")
+));
 
 var app = builder.Build();
 

@@ -17,11 +17,15 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());    //AutoMapper - Conversão de Objeto para Objeto
 
-
+/* 
+    Estabelecer a conexão com a base de dados - SQL Server rodando em um container Docker
+*/
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("DbConnection")
 ));
 
+//Habilitar a injeção de dependência para a utilização desta classe. 
+builder.Services.AddScoped<TaskModel>();
 
 
 

@@ -32,4 +32,9 @@ public class TaskModel
     [Column("CL_IS_DONE")]
     [DisplayName("A tarefa foi concluída?")]
     public bool IsDone { get; set; } = false;
+
+    public TaskModel()
+    {
+        
+    }
 }

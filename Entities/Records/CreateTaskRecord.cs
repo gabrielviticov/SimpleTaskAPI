@@ -15,7 +15,7 @@ namespace SimpleTaskAPI.Entities.Records
         public string Description { get; set; } = string.Empty;
         [EnumDataType(typeof(PriorityEnum))]
         [DisplayName("Prioridade da tarefa [padrão: \"Nenhuma Prioridade\"]")]
-        public string Priority { get; set; } = string.Empty;
+        public string Priority { get; set; } = "NENHUMA_PRIORIDADE";
         [DisplayName("Tarefa criada em")]
         public DateTime CreatedAt { get; private set; } = DateTime.Now;
         [DisplayName("Última atualização da tarefa em")]

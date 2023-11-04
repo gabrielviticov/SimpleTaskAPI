@@ -1,5 +1,6 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SimpleTaskAPI.Data;
 using SimpleTaskAPI.Entities.Models;
 using SimpleTaskAPI.Entities.Records;
@@ -21,6 +22,11 @@ namespace SimpleTaskAPI.Controllers
             mapper = _mapper;
         }
 
+        [HttpGet]
+        public async Task<IEnumerable<TaskModel>> OnGetAll([FromQuery] byte skip = 0, [FromQuery] byte take = 5)
+        {
+            return await db.TaskEntity.Skip(skip).Take(take).ToListAsync();
+        }
         
 
         [HttpPost]

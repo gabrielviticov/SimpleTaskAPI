@@ -1,3 +1,4 @@
+using System.Data.Common;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -38,7 +39,7 @@ namespace SimpleTaskAPI.Controllers
                 taskModel = mapper.Map<TaskModel>(createTask);
                 db.TaskEntity.Add(taskModel);
             } 
-            catch(AutoMapperMappingException exception)
+            catch(DbException exception)
             {
                 return BadRequest($"Infelizmente ocorreu um erro ao gravar uma tarefa: {exception.Message}");
             }
@@ -46,7 +47,7 @@ namespace SimpleTaskAPI.Controllers
             {
                 await db.SaveChangesAsync();
             }
-            return Ok($"A tarefa: {taskModel.Title} foi adicionada com sucesso!");
+            return Ok($"A tarefa: \"{taskModel.Title}\" foi adicionada com sucesso!");
         }
     }
 }

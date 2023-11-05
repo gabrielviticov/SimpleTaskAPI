@@ -35,7 +35,7 @@ namespace SimpleTaskAPI.Controllers
         [Route("Search")]
         public async Task<IActionResult> OnGetByIdentify([FromQuery] Guid identify)
         {
-            var taskFind = db.TaskEntity.FirstOrDefault(task => task.Identify == identify);
+            var taskFind = await db.TaskEntity.FirstOrDefaultAsync(task => task.Identify == identify);
             if (taskFind is null) return NotFound("A tarefa pesquisada não foi encontrada");
             return Ok(taskFind);
         }

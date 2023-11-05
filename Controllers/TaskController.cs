@@ -30,6 +30,15 @@ namespace SimpleTaskAPI.Controllers
         {
             return await db.TaskEntity.Skip(skip).Take(take).ToListAsync();
         }
+
+        [HttpGet]
+        [Route("Search")]
+        public async Task<IActionResult> OnGetByIdentify([FromQuery] Guid identify)
+        {
+            var taskFind = db.TaskEntity.FirstOrDefault(task => task.Identify == identify);
+            if (taskFind is null) return NotFound("A tarefa pesquisada não foi encontrada");
+            return Ok(taskFind);
+        }
         
 
         [HttpPost]

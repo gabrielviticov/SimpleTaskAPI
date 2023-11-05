@@ -33,8 +33,5 @@ public class TaskModel
     [DisplayName("A tarefa foi concluída?")]
     public bool IsDone { get; set; } = false;
 
-    public TaskModel()
-    {
-        
-    }
+    
 }

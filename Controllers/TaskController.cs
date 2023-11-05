@@ -1,5 +1,7 @@
 using System.Data.Common;
+using System.Reflection.Metadata.Ecma335;
 using AutoMapper;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SimpleTaskAPI.Data;
@@ -48,6 +50,35 @@ namespace SimpleTaskAPI.Controllers
                 await db.SaveChangesAsync();
             }
             return Ok($"A tarefa: \"{taskModel.Title}\" foi adicionada com sucesso!");
+        }
+
+        [HttpPatch]
+        [Route("Set")]
+        public async Task<IActionResult> OnSet([FromBody] JsonPatchDocument<UpdateTaskRecord> jsonPatch, [FromQuery] Guid identify)
+        {
+            var task = db.TaskEntity.FirstOrDefault(task => task.Identify == identify);
+            if (taskModel is null) return NotFound("A tarefa pesquisada não foi encontrada");
+            
+            var task1 = mapper.Map<UpdateTaskRecord>(task);
+            jsonPatch.ApplyTo(task1, ModelState);        
+            if (!TryValidateModel(task1))
+            {
+                return ValidationProblem(ModelState);
+            }
+            mapper.Map(task1, task);
+            await db.SaveChangesAsync();
+            return NoContent();
+        }
+
+        [HttpPut]
+        [Route("Update")]
+        public async Task<IActionResult> OnUpdate([FromBody] UpdateTaskRecord updateTask, [FromQuery] Guid identify)
+        {
+            var task = db.TaskEntity.FirstOrDefault(task => task.Identify == identify);
+            if (task is null) return NotFound("A tarefa não foi encontrada");
+            mapper.Map(updateTask, task);
+            await db.SaveChangesAsync();
+            return NoContent();
         }
     }
 }

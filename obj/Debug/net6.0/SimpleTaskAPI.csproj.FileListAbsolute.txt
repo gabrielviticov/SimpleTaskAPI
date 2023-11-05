@@ -63,3 +63,7 @@
 /home/gabrielviticov/Documents/projects/SimpleTaskAPI/obj/Debug/net6.0/ref/SimpleTaskAPI.dll
 /home/gabrielviticov/Documents/projects/SimpleTaskAPI/obj/Debug/net6.0/SimpleTaskAPI.pdb
 /home/gabrielviticov/Documents/projects/SimpleTaskAPI/obj/Debug/net6.0/SimpleTaskAPI.genruntimeconfig.cache
+/home/gabrielviticov/Documents/projects/SimpleTaskAPI/bin/Debug/net6.0/Microsoft.AspNetCore.JsonPatch.dll
+/home/gabrielviticov/Documents/projects/SimpleTaskAPI/bin/Debug/net6.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+/home/gabrielviticov/Documents/projects/SimpleTaskAPI/bin/Debug/net6.0/Newtonsoft.Json.dll
+/home/gabrielviticov/Documents/projects/SimpleTaskAPI/bin/Debug/net6.0/Newtonsoft.Json.Bson.dll

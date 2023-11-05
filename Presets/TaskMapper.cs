@@ -9,6 +9,9 @@ namespace SimpleTaskAPI.Presets
         public TaskMapper()
         {
             CreateMap<CreateTaskRecord, TaskModel>();
+            CreateMap<UpdateTaskRecord, TaskModel>();
+            CreateMap<TaskModel, SetTaskRecord>();
+            CreateMap<TaskModel, UpdateTaskRecord>();
         }
     }
 }

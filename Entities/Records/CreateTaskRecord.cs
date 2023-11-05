@@ -1,6 +1,5 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using SimpleTaskAPI.Entities.Enums;
 
 namespace SimpleTaskAPI.Entities.Records

@@ -58,7 +58,7 @@ namespace SimpleTaskAPI.Controllers
             {
                 await db.SaveChangesAsync();
             }
-            return Ok($"A tarefa: \"{taskModel.Title}\" foi adicionada com sucesso!");
+            return CreatedAtAction(nameof(OnGetByIdentify), new { id = taskModel.Identify}, taskModel );
         }
 
         [HttpPatch]

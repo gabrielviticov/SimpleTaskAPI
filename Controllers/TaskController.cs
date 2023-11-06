@@ -89,5 +89,38 @@ namespace SimpleTaskAPI.Controllers
             await db.SaveChangesAsync();
             return NoContent();
         }
+
+        [HttpDelete]
+        public async Task<IActionResult> OnDeleteAll()
+        {
+            try
+            {
+                List<TaskModel> tasks = db.TaskEntity.ToList();
+                if (tasks.Count > 0)
+                {
+                    db.TaskEntity.RemoveRange(tasks);
+                } 
+            }
+            catch(DbException exception)
+            {
+                throw new Exception(exception.Message);
+            }
+            finally
+            {
+                await db.SaveChangesAsync();
+            }
+            return NoContent();
+        }
+
+        [HttpDelete]
+        [Route("Remove")]
+        public async Task<IActionResult> OnDeleteByIdentify([FromQuery] Guid identify)
+        {
+            var task = db.TaskEntity.FirstOrDefault(task => task.Identify == identify);
+            if (task is null) return NotFound("A tarefa informada não foi encontrada");
+            db.TaskEntity.Remove(task);
+            await db.SaveChangesAsync();
+            return NoContent();
+        }
     }
 }

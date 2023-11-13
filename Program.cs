@@ -31,7 +31,7 @@ builder.Services.AddScoped<TaskModel>();
 
 
 var port = Environment.GetEnvironmentVariable("PORT") ?? "5059";
-builder.WebHost.UseUrls($"http://*:{port}");
+builder.WebHost.UseUrls($"http://localhost:{port}");
 
 var app = builder.Build();
 

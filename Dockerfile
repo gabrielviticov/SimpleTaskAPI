@@ -5,10 +5,10 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["SimpleTaskAPI/SimpleTaskAPI.csproj", "SimpleTaskAPI/"]
-RUN dotnet restore "SimpleTaskAPI/SimpleTaskAPI.csproj"
+COPY ["SimpleTaskAPI.csproj", "./"]
+RUN dotnet restore "SimpleTaskAPI.csproj"
 COPY . .
-WORKDIR "/src/SimpleTaskAPI"
+WORKDIR "/src/"
 RUN dotnet build "SimpleTaskAPI.csproj" -c Release -o /app/build
 
 FROM build AS publish

@@ -1,0 +1,7 @@
+version: 1
+services:
+  - name: web
+    image: mcr.microsoft.com/mssql/server
+    env:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: production

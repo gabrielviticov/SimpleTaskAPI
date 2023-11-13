@@ -30,8 +30,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 builder.Services.AddScoped<TaskModel>();
 
 
-var port = Environment.GetEnvironmentVariable("PORT") ?? "5059";
-builder.WebHost.UseUrls($"http://localhost:{port}");
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8081";
+builder.WebHost.UseUrls($"http://*:{port}");
 
 var app = builder.Build();
 

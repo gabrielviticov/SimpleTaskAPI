@@ -2655,11 +2655,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/gabrielviticov/Documents/projects/SimpleTaskAPI/SimpleTaskAPI.csproj",
+      "projectUniqueName": "/home/gabrielviticov/dev/projects/SimpleTaskAPI/SimpleTaskAPI.csproj",
       "projectName": "SimpleTaskAPI",
-      "projectPath": "/home/gabrielviticov/Documents/projects/SimpleTaskAPI/SimpleTaskAPI.csproj",
+      "projectPath": "/home/gabrielviticov/dev/projects/SimpleTaskAPI/SimpleTaskAPI.csproj",
       "packagesPath": "/home/gabrielviticov/.nuget/packages/",
-      "outputPath": "/home/gabrielviticov/Documents/projects/SimpleTaskAPI/obj/",
+      "outputPath": "/home/gabrielviticov/dev/projects/SimpleTaskAPI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/gabrielviticov/.nuget/NuGet/NuGet.Config"
@@ -2723,7 +2723,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -2735,7 +2736,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.124/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/home/gabrielviticov/.dotnet/sdk/8.0.100/RuntimeIdentifierGraph.json"
       }
     }
   }

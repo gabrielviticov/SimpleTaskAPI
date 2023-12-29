@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5CgwXIvxTZjzxekzvCYa2ROAgexyApYQj9dI4AbvNUdxxEXk1eWHsvMfibXzjQ+oIjC59G3Is3q5IcRQzyQqmA==",
+  "dgSpecHash": "NSB9IlgytZG2EpSFihF/dBvJl9j/s6D6jWfzKwEYmC6nL1cFBdicdvAoYq29rm/kNGTcnbBot/DpMuGWjAoMcg==",
   "success": true,
-  "projectFilePath": "/home/gabrielviticov/Documents/projects/SimpleTaskAPI/SimpleTaskAPI.csproj",
+  "projectFilePath": "/home/gabrielviticov/dev/projects/SimpleTaskAPI/SimpleTaskAPI.csproj",
   "expectedPackageFiles": [
     "/home/gabrielviticov/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/home/gabrielviticov/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
